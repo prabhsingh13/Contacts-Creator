@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Name Creator</title>
+    <link rel="icon" href="/background.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="d-flex align-items-center justify-content-center vh-100">
+        <div class="glass-card p-4 shadow-lg">
+            <h3 class="card-title text-center mb-4">PS Creator Registration</h3>
+            <!-- <div class="glass-table-container mt-3 py-1 px-1">
+                <h5 class="text-center text-light">Time Left: <br>
+                    <span id="timer">0 Day 00 Hr 00 Min 00 Sec</span>
+                </h5>
+                <h6 class="text-center text-light">Deadline: 06/09/2024, 5:00pm</h6>
+            </div> -->
+            <!-- <hr> -->
+            <!-- <h4 class="card-title text-center mb-4">Check Verification Status</h4> -->
+            <div class="mb-3">
+                <input type="text" id="usernameInput" class="form-control" placeholder="@username / profile link">
+            </div>
+            <button id="checkStatus" class="btn btn-primary w-100 d-flex align-items-center justify-content-center">
+                <span id="buttonText">Copy Name</span>
+                <span id="buttonLoader" class="spinner-border spinner-border-sm ms-2" style="display:none;"></span>
+            </button>
+            <div id="statusResult">
+                <!-- Log table will be inserted here -->
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="search.js"></script>
+</body>
+
+</html>
