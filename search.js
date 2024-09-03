@@ -4,7 +4,7 @@ document.getElementById('checkStatus').addEventListener('click', async function 
     document.getElementById('buttonLoader').style.display = 'inline-block';
 
     let usernameInput = document.getElementById('usernameInput').value.trim().toLowerCase();
-    // console.log(usernameInput);
+    console.log(usernameInput);
 
     if (!usernameInput) {
         Swal.fire({
@@ -25,8 +25,8 @@ document.getElementById('checkStatus').addEventListener('click', async function 
 
     // Extract username if input is a URL
     if (usernameInput.includes('instagram.com/')) {
-        const parts = usernameInput.split('/');
-        usernameInput = parts.find(part => part && !part.includes('instagram.com') && !part.includes('www') && !part.includes('?') && !part.includes('https'));
+        const url = new URL(usernameInput);
+        usernameInput = url.pathname.split('/').filter(part => part && part !== 'www' && part !== 'instagram.com')[0];
     }
 
     // Ensure the username is properly trimmed and cleaned
@@ -55,7 +55,7 @@ document.getElementById('checkStatus').addEventListener('click', async function 
     // Format the result as "PS (username)"
     const formattedUsername = `PS (${usernameInput})`;
 
-    // console.log(formattedUsername);
+    console.log(formattedUsername);
 
     // Automatically copy the formatted username to the clipboard
     try {
